@@ -1,0 +1,29 @@
+<div class="container">
+    <div class="card">
+        <div class="card-header">
+           Update book :
+        </div>
+
+        <div class="card-body">
+            <div class="mb-3">
+                <label for="exampleFormControlInput1" class="form-label">Title</label>
+                <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="{{book?.title}}" name="title" #title="ngModel" [(ngModel)]="bookFrm.title">
+              </div>
+              <div class="mb-3">
+                <label for="exampleFormControlInput1" class="form-label">Author</label>
+                <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="{{book?.author}}" name="author" #author="ngModel" [(ngModel)]="bookFrm.author">
+              </div>
+              <div class="mb-3">
+                <label for="exampleFormControlInput1" class="form-label">Price</label>
+                <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="{{book?.price}}" name="price" #price="ngModel" [(ngModel)]="bookFrm.price">
+              </div>
+              <div class="mb-3">
+                <label for="exampleFormControlInput1" class="form-label">Publishing Date</label>
+                <input type="date" class="form-control" id="exampleFormControlInput1" placeholder="{{book?.publishingDate}}" name="publishingDate" #publishingDate="ngModel" [(ngModel)]="bookFrm.publishingDate" value="bookFrm.publishingDate">
+              </div> 
+
+              <button class="btn btn-outline-warning" (click)="updateBook()" (click)="goToBooks()"><i class="fa fa-edit"></i>Update Book </button>
+        </div>
+    </div>
+
+</div>

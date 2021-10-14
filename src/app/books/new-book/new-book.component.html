@@ -1,0 +1,34 @@
+<div class="container">
+    <div class="card">
+        <div class="card-header">
+            Add New book
+        </div>
+        <form #f="ngForm" (ngSubmit)="onSaveBook(f.value)" *ngIf="mode==0">
+        <div class="card-body">
+            <div class="mb-3">
+                <label for="exampleFormControlInput1" class="form-label">Title</label>
+                <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="title"name="title" #title="ngModel" [(ngModel)]="book.title" required>
+              </div>
+              <div class="mb-3">
+                <label for="exampleFormControlInput1" class="form-label">Author</label>
+                <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="author"name="author" #author="ngModel" [(ngModel)]="book.author" required>
+              </div>
+              <div class="mb-3">
+                <label for="exampleFormControlInput1" class="form-label">Price</label>
+                <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="price"name="price" #price="ngModel" [(ngModel)]="book.price" required>
+              </div>
+              <div class="mb-3">
+                <label for="exampleFormControlInput1" class="form-label">Publishing Date</label>
+                <input type="date" class="form-control" id="exampleFormControlInput1" placeholder="date"name="publishingDate" #publishingDate="ngModel"
+                [(ngModel)]="book.publishingDate" required>
+              </div> 
+              <div class="form-group">
+                <input class="checkbox" type="checkbox" name="available" #available="ngModel" [(ngModel)]="book.available" required >
+                <label class="control-label">Available</label>
+                </div>
+              <button type="submit" class="btn btn-success" ><i class="fa fa-plus-circle"></i> add</button>
+        </div>
+      </form>
+    </div>
+
+</div>

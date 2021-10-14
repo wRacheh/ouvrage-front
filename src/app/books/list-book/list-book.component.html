@@ -1,0 +1,47 @@
+<div class="container justify-content-center">
+
+    <div class="card">
+        <div class="card-header">
+            <a>Books List <i class="fa fa-book-open"></i></a>
+        </div>
+        <div class="card-body">
+            <div class="input-group input-group-sm mb-3">
+                <form >
+                <div class="input-group-prepend">
+                    <span class="input-group-text" id="inputGroup-sizing-sm">Key Word <i class="fa fa-file-alt"></i></span>
+                </div>
+                <input type="text" class="form-control" aria-label="Sizing example input"
+                    aria-describedby="inputGroup-sizing-sm">
+                <button class="btn btn-warning text-light" type="submit">Search <i class="fa fa-search text-light"></i>
+                </button>
+            </form>
+            </div>
+
+            <table class="table">
+
+                <tr>
+                    <th>Title</th>
+                    <th>Author</th>
+                    <th>Price</th>
+                    <th>Pub Date</th>
+                    <th>Available</th>
+                    <th></th>
+                    <th></th>
+                </tr>
+                <tr *ngFor="let book of BookList">
+                    <td>{{book?.title}}</td>
+                    <td>{{book?.author}}</td>
+                    <td>{{book?.price}}</td> 
+                    <td>{{book?.publishingDate}}</td>
+                    <td>{{book?.available}}</td>
+                    
+                   <!-- <td>{{book.quantity}}</td>--> 
+                   <td><button class="btn btn-danger" (click)="deletBook(book?._id)" (click)="reload()">Delet</button></td>
+                    <td><button class="btn btn-warning" (click)="updateBook(book?._id)"></button></td>
+                </tr>
+            </table>
+        </div>
+    </div>
+
+
+</div>
